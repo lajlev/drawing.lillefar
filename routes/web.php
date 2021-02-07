@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DrawingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+Route::get('/drawings/create', [DrawingController::class, 'create']);
+Route::post('/drawings', [DrawingController::class, 'store']);
+Route::get('/drawings', [DrawingController::class, 'index']);
+Route::get('/drawings/{id}', [DrawingController::class, 'show']);

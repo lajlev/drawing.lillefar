@@ -17,6 +17,8 @@ mix.js('resources/js/app.js', 'public/js').postCss('resources/css/app.css', 'pub
     require('autoprefixer'),
 ]);
 
+var domain = "drawing.lillefar.test";
+
 mix.browserSync({
     proxy: 'https://' + domain,
     host: domain,
